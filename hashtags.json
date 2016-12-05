@@ -1,0 +1,56 @@
+{
+    "TEAMS": {
+        "2014": {
+            "W": "SEAHAWKS",
+            "L": "BRONCOS"
+        },
+        "2015": {
+            "W": "PATRIOTS",
+            "L": "SEAHAWKS"
+        },
+        "2016": {
+            "W": "BRONCOS",
+            "L": "PANTHERS"
+        }
+    },
+    "HASHTAGS": {
+        "BRONCOS": [
+            "#BroncosWin",
+            "#GoBroncos",
+            "#Broncos",
+            "#Denver",
+            "#DENVER"
+        ],
+
+        "SEAHAWKS": [
+            "#SEAHAWKSWin",
+            "#seahawks",
+            "#GoSeahawks",
+            "#Goseahawks",
+            "#goseahawks",
+            "#Seahawks",
+            "#SEAHAWKS",
+            "#Seattle"
+        ],
+
+        "PATRIOTS": [
+            "#Pats",
+            "#PATS",
+            "#PatsWin",
+            "#PatriotsWin",
+            "#GoPatriots",
+            "#Patriots",
+            "#PATRIOTS",
+            "#NewEngland",
+            "#NEP"
+        ],
+        "PANTHERS": [
+            "#PanthersWin",
+            "#pantherswin",
+            "#panthers",
+            "#Panthers",
+            "#Carolina"
+        ]
+    }
+}
+   

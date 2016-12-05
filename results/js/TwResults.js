@@ -1,17 +1,47 @@
 var TwResults = {
   
     datas : null,
+    hashtags : null,
   
     init : function(){
         $.getJSON("results.json", function(json) {
             TwResults.datas = json;
             TwResults.createGraphs();
         });
+        
+        $.getJSON("../hashtags.json", function(json) {
+            TwResults.hashtags = json;
+            TwResults.printHashtags();
+        });
         //https://twitter.com/search?q=%23SB
         
         //this.test();
     },
     
+    /**
+     * Hashtagek listázása
+     * @returns {undefined}
+     */
+    printHashtags: function(){
+        var $this = this;
+        var hashtags = this.hashtags;
+        
+        $('.hashtag-list').each(function(){
+           var ul = $(this);
+           var k = ul.attr('data-key');
+           
+           for(var hk in hashtags.HASHTAGS[k]){
+               $this.getHashtagLi(hashtags.HASHTAGS[k][hk]).appendTo(ul);
+           }
+        });
+    },
+    
+    getHashtagLi : function(hashtag){
+        var hashtagsearch = hashtag.replace("#", "%23");
+        return $('<li/>').append(
+              $('<a/>').attr('href', 'https://twitter.com/search?q='+hashtagsearch).html(hashtag)
+              );  
+    },
     
     
     
