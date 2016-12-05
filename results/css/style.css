@@ -1,0 +1,10 @@
+body{
+    margin: 0px auto;
+    width: 800px;
+}
+
+.inline-graph{
+    display: inline;
+    width: 400px;
+    margin: 0 auto;
+}

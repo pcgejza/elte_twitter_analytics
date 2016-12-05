@@ -1,0 +1,19 @@
+{
+  "name": "NodeJsApplication",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser",
+    "csv"
+  ],
+  "author": "pcgejza",
+  "contributors": [],
+  "dependencies": {
+    "async": "^2.0.0-rc.3"
+  }, "scripts":{
+"start":"node main.js"}
+
+}

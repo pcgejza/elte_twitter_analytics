@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="css/style.css" />
+        
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="js/jquery-1.11.1.js"></script>
+        <script src="js/TwResults.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                TwResults.init();
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div>
+            <h1>
+                Twitter super bowl elemzések a 2014,2015,2016-os évekből
+            </h1>
+            <small>Készítette: <b>Huzinecz Erik</b></small>
+        </div>
+        
+        <hr>
+        
+        <div>
+            <h2>1. Bevezető</h2>
+            <p>
+                Az alábbiakban megvizsgáljuk azt, hogy egy nagy twitter adathalmazból milyen értékes adatokat 
+                tudunk kinyerni a super bowlokra vonatkozóan. Az alapvető feladatunk az, hogy a meglévő adatokat feldolgozzuk,
+                valamint valamilyen algoritmus alapján rendszerezzük az adatokat. 
+            </p>
+        </div>
+        <div>
+            <h2>2. Eszközök és adathalmaz</h2>
+            <h3>2.1. Eszközök és technológiák</h3>
+            <p>
+                Kutatás és fejlesztés során felhasznált eszközök:
+            </p>
+            <ul>
+                <li><a href="https://netbeans.org/">Netbeans IDE</a></li>
+                <li><a href="https://www.google.com/chrome/">Google Chrome</a></li>
+                <li><a href="https://nodejs.org/en/">NodeJs</a></li>
+                <li><a href="http://www.w3schools.com/js/">Javacript</a></li>
+            </ul>
+            <h3>2.2. Adathalmaz</h3>
+            <p>
+                A feladat során az <a href="https://www.elte.hu/">ELTE</a> <a href="http://www.inf.elte.hu/karunkrol/szervezet/tanszekek/Lapok/Inform%C3%A1ci%C3%B3sRendszerekTansz%C3%A9k.aspx">Információs Rendszerek Tanszék</a>e
+                által begyűjtött twitter adatokkal dolgoztam, ebből is azokkal a tweetekkel, amelyek 
+                <span class="kiemelt">2013.január és 2016.április közöttiek</span>, valamint szerepel a 
+                tweet szövegében az <a href="https://twitter.com/search?q=%23SB">#SB</a> <a href="https://en.wikipedia.org/wiki/Hashtag">hashtag</a>.
+            </p>
+        </div>
+        
+        <div>
+            <h2>Grafikon super bowlok szerint</h2>
+        
+            <div id="graph_by_sb_2014">
+                <h3>2014, győztes : SEAHAWKS</h3>
+                <div></div>
+            </div>
+            <div id="graph_by_sb_2015" class="inline-graph">
+                <h3>2015, győztes : PATRIOTS</h3>
+                <div></div>
+            </div>
+            <div id="graph_by_sb_2016" class="inline-graph">
+                <h3>2016, győztes : BRONCOS</h3>
+                <div></div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div>
+            <h2>Grafikon hashtag szerint</h2>
+        
+            <div id="graph_by_hash_2014">
+                <div></div>
+            </div>
+            <div id="graph_by_hash_2015">
+                <div></div>
+            </div>
+            <div id="graph_by_hash_2016">
+                <div></div>
+            </div>
+        </div>
+    </body>
+</html>

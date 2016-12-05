@@ -1,0 +1,1113 @@
+{
+     "byHashtag": {
+          "SB2014": {
+               "#Broncos": 2187,
+               "#Denver": 372,
+               "#Seahawks": 2244,
+               "#Seattle": 320,
+               "#seahawks": 223,
+               "#SEAHAWKS": 46,
+               "#GoSeahawks": 51,
+               "#GoBroncos": 161,
+               "#DENVER": 8,
+               "#goseahawks": 8,
+               "#BroncosWin": 5
+          },
+          "SB2015": {
+               "#Patriots": 2251,
+               "#Pats": 353,
+               "#Seahawks": 2137,
+               "#NewEngland": 128,
+               "#Seattle": 273,
+               "#PATRIOTS": 27,
+               "#GoSeahawks": 23,
+               "#SEAHAWKS": 32,
+               "#seahawks": 125,
+               "#NEP": 4,
+               "#GoPatriots": 35,
+               "#PATS": 12,
+               "#PatsWin": 1
+          },
+          "SB2016": {
+               "#Broncos": 4942,
+               "#Denver": 453,
+               "#PanthersWin": 1326,
+               "#Panthers": 3360,
+               "#BroncosWin": 548,
+               "#GoBroncos": 198,
+               "#Carolina": 343,
+               "#panthers": 114,
+               "#DENVER": 4
+          }
+     },
+     "byDate": {
+          "SB2014": {
+               "2014_1_31": {
+                    "BRONCOS": 125,
+                    "SEAHAWKS": 172
+               },
+               "2014_1_30": {
+                    "BRONCOS": 104,
+                    "SEAHAWKS": 87
+               },
+               "2013_11_29": {
+                    "BRONCOS": 0,
+                    "SEAHAWKS": 1
+               },
+               "2013_12_5": {
+                    "BRONCOS": 0,
+                    "SEAHAWKS": 3
+               },
+               "2013_12_6": {
+                    "BRONCOS": 1,
+                    "SEAHAWKS": 112
+               },
+               "2014_2_1": {
+                    "BRONCOS": 189,
+                    "SEAHAWKS": 195
+               },
+               "2014_1_20": {
+                    "BRONCOS": 643,
+                    "SEAHAWKS": 144
+               },
+               "2013_12_7": {
+                    "BRONCOS": 4,
+                    "SEAHAWKS": 1
+               },
+               "2013_12_9": {
+                    "BRONCOS": 19,
+                    "SEAHAWKS": 15
+               },
+               "2013_12_10": {
+                    "BRONCOS": 11,
+                    "SEAHAWKS": 12
+               },
+               "2014_1_21": {
+                    "BRONCOS": 233,
+                    "SEAHAWKS": 881
+               },
+               "2014_1_17": {
+                    "BRONCOS": 16,
+                    "SEAHAWKS": 12
+               },
+               "2013_12_12": {
+                    "BRONCOS": 3,
+                    "SEAHAWKS": 8
+               },
+               "2013_12_13": {
+                    "BRONCOS": 9,
+                    "SEAHAWKS": 7
+               },
+               "2014_1_29": {
+                    "BRONCOS": 74,
+                    "SEAHAWKS": 91
+               },
+               "2014_1_24": {
+                    "BRONCOS": 40,
+                    "SEAHAWKS": 79
+               },
+               "2014_1_2": {
+                    "BRONCOS": 1,
+                    "SEAHAWKS": 6
+               },
+               "2014_1_3": {
+                    "BRONCOS": 3,
+                    "SEAHAWKS": 16
+               },
+               "2013_12_14": {
+                    "BRONCOS": 33,
+                    "SEAHAWKS": 2
+               },
+               "2014_1_4": {
+                    "BRONCOS": 3,
+                    "SEAHAWKS": 11
+               },
+               "2014_1_5": {
+                    "BRONCOS": 5,
+                    "SEAHAWKS": 8
+               },
+               "2013_12_15": {
+                    "BRONCOS": 3,
+                    "SEAHAWKS": 10
+               },
+               "2013_12_16": {
+                    "BRONCOS": 1,
+                    "SEAHAWKS": 17
+               },
+               "2014_1_6": {
+                    "BRONCOS": 17,
+                    "SEAHAWKS": 7
+               },
+               "2013_12_17": {
+                    "BRONCOS": 6,
+                    "SEAHAWKS": 19
+               },
+               "2013_12_18": {
+                    "BRONCOS": 2,
+                    "SEAHAWKS": 14
+               },
+               "2014_1_7": {
+                    "BRONCOS": 4,
+                    "SEAHAWKS": 5
+               },
+               "2013_12_19": {
+                    "BRONCOS": 2,
+                    "SEAHAWKS": 11
+               },
+               "2014_1_8": {
+                    "BRONCOS": 4,
+                    "SEAHAWKS": 8
+               },
+               "2013_12_20": {
+                    "BRONCOS": 2,
+                    "SEAHAWKS": 14
+               },
+               "2014_1_9": {
+                    "BRONCOS": 5,
+                    "SEAHAWKS": 5
+               },
+               "2014_1_10": {
+                    "BRONCOS": 5,
+                    "SEAHAWKS": 5
+               },
+               "2014_1_11": {
+                    "BRONCOS": 2,
+                    "SEAHAWKS": 26
+               },
+               "2013_12_21": {
+                    "BRONCOS": 2,
+                    "SEAHAWKS": 4
+               },
+               "2014_1_12": {
+                    "BRONCOS": 8,
+                    "SEAHAWKS": 114
+               },
+               "2013_12_22": {
+                    "BRONCOS": 2,
+                    "SEAHAWKS": 7
+               },
+               "2013_12_23": {
+                    "BRONCOS": 18,
+                    "SEAHAWKS": 7
+               },
+               "2014_1_13": {
+                    "BRONCOS": 80,
+                    "SEAHAWKS": 124
+               },
+               "2013_12_24": {
+                    "BRONCOS": 11,
+                    "SEAHAWKS": 12
+               },
+               "2014_1_14": {
+                    "BRONCOS": 64,
+                    "SEAHAWKS": 46
+               },
+               "2013_12_25": {
+                    "BRONCOS": 8,
+                    "SEAHAWKS": 13
+               },
+               "2013_12_26": {
+                    "BRONCOS": 4,
+                    "SEAHAWKS": 12
+               },
+               "2014_1_15": {
+                    "BRONCOS": 7,
+                    "SEAHAWKS": 29
+               },
+               "2014_1_16": {
+                    "BRONCOS": 13,
+                    "SEAHAWKS": 33
+               },
+               "2013_12_27": {
+                    "BRONCOS": 4,
+                    "SEAHAWKS": 11
+               },
+               "2013_12_28": {
+                    "BRONCOS": 6,
+                    "SEAHAWKS": 9
+               },
+               "2014_1_18": {
+                    "BRONCOS": 17,
+                    "SEAHAWKS": 26
+               },
+               "2013_12_29": {
+                    "BRONCOS": 6,
+                    "SEAHAWKS": 8
+               },
+               "2014_1_19": {
+                    "BRONCOS": 19,
+                    "SEAHAWKS": 23
+               },
+               "2013_12_30": {
+                    "BRONCOS": 16,
+                    "SEAHAWKS": 16
+               },
+               "2013_12_31": {
+                    "BRONCOS": 18,
+                    "SEAHAWKS": 21
+               },
+               "2014_1_1": {
+                    "BRONCOS": 11,
+                    "SEAHAWKS": 12
+               },
+               "2013_12_4": {
+                    "BRONCOS": 0,
+                    "SEAHAWKS": 1
+               },
+               "2013_12_8": {
+                    "BRONCOS": 1,
+                    "SEAHAWKS": 0
+               },
+               "2014_1_22": {
+                    "BRONCOS": 45,
+                    "SEAHAWKS": 86
+               },
+               "2014_1_23": {
+                    "BRONCOS": 43,
+                    "SEAHAWKS": 79
+               },
+               "2014_1_25": {
+                    "BRONCOS": 19,
+                    "SEAHAWKS": 28
+               },
+               "2014_1_28": {
+                    "BRONCOS": 58,
+                    "SEAHAWKS": 65
+               },
+               "2014_1_27": {
+                    "BRONCOS": 0,
+                    "SEAHAWKS": 1
+               }
+          },
+          "SB2015": {
+               "2014_12_15": {
+                    "PATRIOTS": 24,
+                    "SEAHAWKS": 15
+               },
+               "2015_1_26": {
+                    "PATRIOTS": 74,
+                    "SEAHAWKS": 110
+               },
+               "2015_1_29": {
+                    "PATRIOTS": 106,
+                    "SEAHAWKS": 130
+               },
+               "2015_1_27": {
+                    "PATRIOTS": 101,
+                    "SEAHAWKS": 95
+               },
+               "2015_1_31": {
+                    "PATRIOTS": 153,
+                    "SEAHAWKS": 226
+               },
+               "2014_12_17": {
+                    "PATRIOTS": 5,
+                    "SEAHAWKS": 5
+               },
+               "2014_12_18": {
+                    "PATRIOTS": 5,
+                    "SEAHAWKS": 4
+               },
+               "2015_1_30": {
+                    "PATRIOTS": 126,
+                    "SEAHAWKS": 153
+               },
+               "2015_1_25": {
+                    "PATRIOTS": 110,
+                    "SEAHAWKS": 33
+               },
+               "2015_1_28": {
+                    "PATRIOTS": 118,
+                    "SEAHAWKS": 118
+               },
+               "2015_1_19": {
+                    "PATRIOTS": 0,
+                    "SEAHAWKS": 8
+               },
+               "2015_1_20": {
+                    "PATRIOTS": 104,
+                    "SEAHAWKS": 85
+               },
+               "2015_1_21": {
+                    "PATRIOTS": 82,
+                    "SEAHAWKS": 99
+               },
+               "2015_1_18": {
+                    "PATRIOTS": 1,
+                    "SEAHAWKS": 0
+               },
+               "2014_12_19": {
+                    "PATRIOTS": 3,
+                    "SEAHAWKS": 2
+               },
+               "2014_12_20": {
+                    "PATRIOTS": 0,
+                    "SEAHAWKS": 6
+               },
+               "2015_1_24": {
+                    "PATRIOTS": 104,
+                    "SEAHAWKS": 93
+               },
+               "2015_1_15": {
+                    "PATRIOTS": 15,
+                    "SEAHAWKS": 13
+               },
+               "2014_12_23": {
+                    "PATRIOTS": 6,
+                    "SEAHAWKS": 51
+               },
+               "2014_12_24": {
+                    "PATRIOTS": 24,
+                    "SEAHAWKS": 12
+               },
+               "2014_12_22": {
+                    "PATRIOTS": 18,
+                    "SEAHAWKS": 10
+               },
+               "2014_12_21": {
+                    "PATRIOTS": 0,
+                    "SEAHAWKS": 6
+               },
+               "2014_11_1": {
+                    "PATRIOTS": 6,
+                    "SEAHAWKS": 2
+               },
+               "2014_11_4": {
+                    "PATRIOTS": 37,
+                    "SEAHAWKS": 11
+               },
+               "2014_11_3": {
+                    "PATRIOTS": 46,
+                    "SEAHAWKS": 7
+               },
+               "2014_11_6": {
+                    "PATRIOTS": 3,
+                    "SEAHAWKS": 3
+               },
+               "2015_1_2": {
+                    "PATRIOTS": 4,
+                    "SEAHAWKS": 10
+               },
+               "2014_11_7": {
+                    "PATRIOTS": 10,
+                    "SEAHAWKS": 2
+               },
+               "2014_11_2": {
+                    "PATRIOTS": 4,
+                    "SEAHAWKS": 3
+               },
+               "2015_1_5": {
+                    "PATRIOTS": 18,
+                    "SEAHAWKS": 5
+               },
+               "2014_11_5": {
+                    "PATRIOTS": 11,
+                    "SEAHAWKS": 6
+               },
+               "2015_1_3": {
+                    "PATRIOTS": 11,
+                    "SEAHAWKS": 4
+               },
+               "2015_1_7": {
+                    "PATRIOTS": 9,
+                    "SEAHAWKS": 8
+               },
+               "2015_1_4": {
+                    "PATRIOTS": 9,
+                    "SEAHAWKS": 7
+               },
+               "2015_1_8": {
+                    "PATRIOTS": 10,
+                    "SEAHAWKS": 14
+               },
+               "2015_1_6": {
+                    "PATRIOTS": 18,
+                    "SEAHAWKS": 16
+               },
+               "2015_1_9": {
+                    "PATRIOTS": 13,
+                    "SEAHAWKS": 12
+               },
+               "2014_11_9": {
+                    "PATRIOTS": 7,
+                    "SEAHAWKS": 21
+               },
+               "2014_11_11": {
+                    "PATRIOTS": 2,
+                    "SEAHAWKS": 27
+               },
+               "2014_11_18": {
+                    "PATRIOTS": 32,
+                    "SEAHAWKS": 13
+               },
+               "2014_11_8": {
+                    "PATRIOTS": 2,
+                    "SEAHAWKS": 13
+               },
+               "2014_11_10": {
+                    "PATRIOTS": 2,
+                    "SEAHAWKS": 35
+               },
+               "2014_11_17": {
+                    "PATRIOTS": 9,
+                    "SEAHAWKS": 15
+               },
+               "2014_11_13": {
+                    "PATRIOTS": 5,
+                    "SEAHAWKS": 3
+               },
+               "2014_11_16": {
+                    "PATRIOTS": 5,
+                    "SEAHAWKS": 3
+               },
+               "2014_11_15": {
+                    "PATRIOTS": 6,
+                    "SEAHAWKS": 9
+               },
+               "2014_11_14": {
+                    "PATRIOTS": 4,
+                    "SEAHAWKS": 19
+               },
+               "2014_11_12": {
+                    "PATRIOTS": 5,
+                    "SEAHAWKS": 4
+               },
+               "2015_1_12": {
+                    "PATRIOTS": 130,
+                    "SEAHAWKS": 95
+               },
+               "2015_1_11": {
+                    "PATRIOTS": 94,
+                    "SEAHAWKS": 51
+               },
+               "2015_1_10": {
+                    "PATRIOTS": 18,
+                    "SEAHAWKS": 30
+               },
+               "2015_1_13": {
+                    "PATRIOTS": 19,
+                    "SEAHAWKS": 33
+               },
+               "2015_1_14": {
+                    "PATRIOTS": 10,
+                    "SEAHAWKS": 18
+               },
+               "2014_11_21": {
+                    "PATRIOTS": 11,
+                    "SEAHAWKS": 7
+               },
+               "2014_11_19": {
+                    "PATRIOTS": 4,
+                    "SEAHAWKS": 4
+               },
+               "2014_11_22": {
+                    "PATRIOTS": 6,
+                    "SEAHAWKS": 5
+               },
+               "2015_1_23": {
+                    "PATRIOTS": 119,
+                    "SEAHAWKS": 75
+               },
+               "2015_1_22": {
+                    "PATRIOTS": 141,
+                    "SEAHAWKS": 84
+               },
+               "2014_11_23": {
+                    "PATRIOTS": 1,
+                    "SEAHAWKS": 5
+               },
+               "2015_1_16": {
+                    "PATRIOTS": 9,
+                    "SEAHAWKS": 15
+               },
+               "2015_1_17": {
+                    "PATRIOTS": 10,
+                    "SEAHAWKS": 36
+               },
+               "2014_11_20": {
+                    "PATRIOTS": 6,
+                    "SEAHAWKS": 5
+               },
+               "2014_11_26": {
+                    "PATRIOTS": 4,
+                    "SEAHAWKS": 11
+               },
+               "2014_11_24": {
+                    "PATRIOTS": 22,
+                    "SEAHAWKS": 19
+               },
+               "2014_11_25": {
+                    "PATRIOTS": 12,
+                    "SEAHAWKS": 21
+               },
+               "2014_11_27": {
+                    "PATRIOTS": 8,
+                    "SEAHAWKS": 9
+               },
+               "2014_11_28": {
+                    "PATRIOTS": 4,
+                    "SEAHAWKS": 15
+               },
+               "2014_11_29": {
+                    "PATRIOTS": 3,
+                    "SEAHAWKS": 38
+               },
+               "2014_11_30": {
+                    "PATRIOTS": 5,
+                    "SEAHAWKS": 8
+               },
+               "2014_12_1": {
+                    "PATRIOTS": 22,
+                    "SEAHAWKS": 35
+               },
+               "2014_12_2": {
+                    "PATRIOTS": 31,
+                    "SEAHAWKS": 10
+               },
+               "2014_12_4": {
+                    "PATRIOTS": 2,
+                    "SEAHAWKS": 8
+               },
+               "2014_12_3": {
+                    "PATRIOTS": 11,
+                    "SEAHAWKS": 8
+               },
+               "2014_12_7": {
+                    "PATRIOTS": 2,
+                    "SEAHAWKS": 38
+               },
+               "2014_12_9": {
+                    "PATRIOTS": 51,
+                    "SEAHAWKS": 20
+               },
+               "2014_12_8": {
+                    "PATRIOTS": 10,
+                    "SEAHAWKS": 36
+               },
+               "2014_12_5": {
+                    "PATRIOTS": 1,
+                    "SEAHAWKS": 11
+               },
+               "2014_12_10": {
+                    "PATRIOTS": 1,
+                    "SEAHAWKS": 5
+               },
+               "2014_12_6": {
+                    "PATRIOTS": 3,
+                    "SEAHAWKS": 10
+               },
+               "2014_12_12": {
+                    "PATRIOTS": 1,
+                    "SEAHAWKS": 7
+               },
+               "2014_12_11": {
+                    "PATRIOTS": 2,
+                    "SEAHAWKS": 0
+               },
+               "2014_12_27": {
+                    "PATRIOTS": 7,
+                    "SEAHAWKS": 32
+               },
+               "2014_12_28": {
+                    "PATRIOTS": 8,
+                    "SEAHAWKS": 25
+               },
+               "2014_12_30": {
+                    "PATRIOTS": 17,
+                    "SEAHAWKS": 27
+               },
+               "2014_12_31": {
+                    "PATRIOTS": 2,
+                    "SEAHAWKS": 14
+               },
+               "2014_12_29": {
+                    "PATRIOTS": 10,
+                    "SEAHAWKS": 12
+               },
+               "2015_1_1": {
+                    "PATRIOTS": 7,
+                    "SEAHAWKS": 14
+               },
+               "2014_12_13": {
+                    "PATRIOTS": 0,
+                    "SEAHAWKS": 4
+               },
+               "2014_12_14": {
+                    "PATRIOTS": 0,
+                    "SEAHAWKS": 3
+               },
+               "2014_12_16": {
+                    "PATRIOTS": 4,
+                    "SEAHAWKS": 12
+               }
+          },
+          "SB2016": {
+               "2015_12_26": {
+                    "BRONCOS": 4,
+                    "PANTHERS": 5
+               },
+               "2015_12_28": {
+                    "BRONCOS": 11,
+                    "PANTHERS": 27
+               },
+               "2015_12_22": {
+                    "BRONCOS": 9,
+                    "PANTHERS": 10
+               },
+               "2016_2_3": {
+                    "BRONCOS": 247,
+                    "PANTHERS": 285
+               },
+               "2016_2_2": {
+                    "BRONCOS": 526,
+                    "PANTHERS": 1018
+               },
+               "2016_2_4": {
+                    "BRONCOS": 186,
+                    "PANTHERS": 109
+               },
+               "2015_12_29": {
+                    "BRONCOS": 14,
+                    "PANTHERS": 13
+               },
+               "2015_12_27": {
+                    "BRONCOS": 2,
+                    "PANTHERS": 1
+               },
+               "2015_12_30": {
+                    "BRONCOS": 18,
+                    "PANTHERS": 6
+               },
+               "2016_2_5": {
+                    "BRONCOS": 94,
+                    "PANTHERS": 72
+               },
+               "2015_12_25": {
+                    "BRONCOS": 7,
+                    "PANTHERS": 3
+               },
+               "2015_12_24": {
+                    "BRONCOS": 4,
+                    "PANTHERS": 3
+               },
+               "2015_12_23": {
+                    "BRONCOS": 6,
+                    "PANTHERS": 2
+               },
+               "2016_2_6": {
+                    "BRONCOS": 1225,
+                    "PANTHERS": 139
+               },
+               "2016_1_1": {
+                    "BRONCOS": 7,
+                    "PANTHERS": 2
+               },
+               "2015_12_31": {
+                    "BRONCOS": 11,
+                    "PANTHERS": 4
+               },
+               "2016_1_5": {
+                    "BRONCOS": 19,
+                    "PANTHERS": 10
+               },
+               "2016_1_3": {
+                    "BRONCOS": 4,
+                    "PANTHERS": 2
+               },
+               "2016_1_6": {
+                    "BRONCOS": 8,
+                    "PANTHERS": 4
+               },
+               "2016_1_7": {
+                    "BRONCOS": 17,
+                    "PANTHERS": 4
+               },
+               "2016_1_4": {
+                    "BRONCOS": 11,
+                    "PANTHERS": 1
+               },
+               "2016_1_2": {
+                    "BRONCOS": 10,
+                    "PANTHERS": 2
+               },
+               "2016_1_13": {
+                    "BRONCOS": 10,
+                    "PANTHERS": 2
+               },
+               "2016_1_10": {
+                    "BRONCOS": 13,
+                    "PANTHERS": 6
+               },
+               "2016_1_14": {
+                    "BRONCOS": 12,
+                    "PANTHERS": 13
+               },
+               "2016_1_8": {
+                    "BRONCOS": 12,
+                    "PANTHERS": 4
+               },
+               "2016_1_15": {
+                    "BRONCOS": 14,
+                    "PANTHERS": 2
+               },
+               "2016_1_9": {
+                    "BRONCOS": 8,
+                    "PANTHERS": 3
+               },
+               "2016_1_11": {
+                    "BRONCOS": 13,
+                    "PANTHERS": 9
+               },
+               "2016_1_16": {
+                    "BRONCOS": 35,
+                    "PANTHERS": 10
+               },
+               "2016_1_12": {
+                    "BRONCOS": 9,
+                    "PANTHERS": 3
+               },
+               "2016_1_25": {
+                    "BRONCOS": 536,
+                    "PANTHERS": 77
+               },
+               "2016_1_26": {
+                    "BRONCOS": 537,
+                    "PANTHERS": 679
+               },
+               "2016_1_18": {
+                    "BRONCOS": 70,
+                    "PANTHERS": 128
+               },
+               "2016_1_20": {
+                    "BRONCOS": 13,
+                    "PANTHERS": 11
+               },
+               "2016_1_19": {
+                    "BRONCOS": 76,
+                    "PANTHERS": 25
+               },
+               "2016_1_24": {
+                    "BRONCOS": 20,
+                    "PANTHERS": 41
+               },
+               "2016_1_23": {
+                    "BRONCOS": 70,
+                    "PANTHERS": 24
+               },
+               "2016_1_21": {
+                    "BRONCOS": 15,
+                    "PANTHERS": 9
+               },
+               "2016_1_22": {
+                    "BRONCOS": 24,
+                    "PANTHERS": 13
+               },
+               "2015_11_7": {
+                    "BRONCOS": 1,
+                    "PANTHERS": 5
+               },
+               "2015_11_8": {
+                    "BRONCOS": 4,
+                    "PANTHERS": 4
+               },
+               "2016_1_17": {
+                    "BRONCOS": 12,
+                    "PANTHERS": 3
+               },
+               "2015_11_16": {
+                    "BRONCOS": 13,
+                    "PANTHERS": 14
+               },
+               "2015_11_10": {
+                    "BRONCOS": 13,
+                    "PANTHERS": 15
+               },
+               "2015_11_11": {
+                    "BRONCOS": 8,
+                    "PANTHERS": 9
+               },
+               "2015_11_12": {
+                    "BRONCOS": 4,
+                    "PANTHERS": 1
+               },
+               "2015_11_9": {
+                    "BRONCOS": 9,
+                    "PANTHERS": 26
+               },
+               "2015_11_15": {
+                    "BRONCOS": 7,
+                    "PANTHERS": 4
+               },
+               "2015_11_17": {
+                    "BRONCOS": 18,
+                    "PANTHERS": 2
+               },
+               "2015_11_13": {
+                    "BRONCOS": 0,
+                    "PANTHERS": 3
+               },
+               "2015_11_18": {
+                    "BRONCOS": 1,
+                    "PANTHERS": 4
+               },
+               "2015_11_14": {
+                    "BRONCOS": 0,
+                    "PANTHERS": 1
+               },
+               "2015_11_25": {
+                    "BRONCOS": 6,
+                    "PANTHERS": 3
+               },
+               "2015_11_23": {
+                    "BRONCOS": 11,
+                    "PANTHERS": 20
+               },
+               "2015_11_24": {
+                    "BRONCOS": 5,
+                    "PANTHERS": 8
+               },
+               "2015_11_19": {
+                    "BRONCOS": 6,
+                    "PANTHERS": 4
+               },
+               "2015_11_20": {
+                    "BRONCOS": 4,
+                    "PANTHERS": 7
+               },
+               "2015_11_22": {
+                    "BRONCOS": 3,
+                    "PANTHERS": 0
+               },
+               "2015_11_26": {
+                    "BRONCOS": 12,
+                    "PANTHERS": 2
+               },
+               "2015_11_21": {
+                    "BRONCOS": 3,
+                    "PANTHERS": 1
+               },
+               "2016_2_1": {
+                    "BRONCOS": 180,
+                    "PANTHERS": 259
+               },
+               "2016_1_28": {
+                    "BRONCOS": 85,
+                    "PANTHERS": 59
+               },
+               "2016_1_27": {
+                    "BRONCOS": 83,
+                    "PANTHERS": 55
+               },
+               "2016_1_31": {
+                    "BRONCOS": 80,
+                    "PANTHERS": 52
+               },
+               "2016_1_30": {
+                    "BRONCOS": 104,
+                    "PANTHERS": 69
+               },
+               "2016_1_29": {
+                    "BRONCOS": 51,
+                    "PANTHERS": 47
+               },
+               "2015_11_27": {
+                    "BRONCOS": 8,
+                    "PANTHERS": 38
+               },
+               "2015_11_28": {
+                    "BRONCOS": 6,
+                    "PANTHERS": 16
+               },
+               "2015_11_29": {
+                    "BRONCOS": 7,
+                    "PANTHERS": 1
+               },
+               "2015_11_30": {
+                    "BRONCOS": 10,
+                    "PANTHERS": 0
+               },
+               "2015_12_1": {
+                    "BRONCOS": 32,
+                    "PANTHERS": 10
+               },
+               "2015_12_2": {
+                    "BRONCOS": 8,
+                    "PANTHERS": 9
+               },
+               "2015_12_8": {
+                    "BRONCOS": 11,
+                    "PANTHERS": 18
+               },
+               "2015_12_3": {
+                    "BRONCOS": 1,
+                    "PANTHERS": 6
+               },
+               "2015_12_7": {
+                    "BRONCOS": 9,
+                    "PANTHERS": 11
+               },
+               "2015_12_9": {
+                    "BRONCOS": 7,
+                    "PANTHERS": 11
+               },
+               "2015_12_5": {
+                    "BRONCOS": 7,
+                    "PANTHERS": 1
+               },
+               "2015_12_6": {
+                    "BRONCOS": 9,
+                    "PANTHERS": 8
+               },
+               "2015_12_4": {
+                    "BRONCOS": 3,
+                    "PANTHERS": 6
+               },
+               "2015_12_10": {
+                    "BRONCOS": 8,
+                    "PANTHERS": 8
+               },
+               "2015_12_14": {
+                    "BRONCOS": 14,
+                    "PANTHERS": 20
+               },
+               "2015_12_13": {
+                    "BRONCOS": 8,
+                    "PANTHERS": 2
+               },
+               "2015_12_12": {
+                    "BRONCOS": 4,
+                    "PANTHERS": 4
+               },
+               "2015_12_15": {
+                    "BRONCOS": 11,
+                    "PANTHERS": 5
+               },
+               "2015_12_11": {
+                    "BRONCOS": 7,
+                    "PANTHERS": 4
+               },
+               "2015_12_16": {
+                    "BRONCOS": 9,
+                    "PANTHERS": 2
+               },
+               "2015_12_17": {
+                    "BRONCOS": 1,
+                    "PANTHERS": 0
+               },
+               "2015_12_20": {
+                    "BRONCOS": 8,
+                    "PANTHERS": 11
+               },
+               "2015_12_21": {
+                    "BRONCOS": 9,
+                    "PANTHERS": 26
+               },
+               "2015_12_19": {
+                    "BRONCOS": 7,
+                    "PANTHERS": 1
+               },
+               "2015_12_18": {
+                    "BRONCOS": 1,
+                    "PANTHERS": 0
+               }
+          }
+     },
+     "byYear": {
+          "SB2014": {
+               "2013": {
+                    "BRONCOS": 192,
+                    "SEAHAWKS": 367
+               },
+               "2014": {
+                    "BRONCOS": 1857,
+                    "SEAHAWKS": 2424
+               }
+          },
+          "SB2015": {
+               "2014": {
+                    "PATRIOTS": 552,
+                    "SEAHAWKS": 771
+               },
+               "2015": {
+                    "PATRIOTS": 1743,
+                    "SEAHAWKS": 1690
+               }
+          },
+          "SB2016": {
+               "2015": {
+                    "BRONCOS": 419,
+                    "PANTHERS": 425
+               },
+               "2016": {
+                    "BRONCOS": 4436,
+                    "PANTHERS": 3251
+               }
+          }
+     },
+     "byYearMonth": {
+          "SB2014": {
+               "2014-1": {
+                    "BRONCOS": 1668,
+                    "SEAHAWKS": 2229
+               },
+               "2013-11": {
+                    "BRONCOS": 0,
+                    "SEAHAWKS": 1
+               },
+               "2013-12": {
+                    "BRONCOS": 192,
+                    "SEAHAWKS": 366
+               },
+               "2014-2": {
+                    "BRONCOS": 189,
+                    "SEAHAWKS": 195
+               }
+          },
+          "SB2015": {
+               "2014-12": {
+                    "PATRIOTS": 270,
+                    "SEAHAWKS": 428
+               },
+               "2015-1": {
+                    "PATRIOTS": 1743,
+                    "SEAHAWKS": 1690
+               },
+               "2014-11": {
+                    "PATRIOTS": 282,
+                    "SEAHAWKS": 343
+               }
+          },
+          "SB2016": {
+               "2015-12": {
+                    "BRONCOS": 260,
+                    "PANTHERS": 237
+               },
+               "2016-2": {
+                    "BRONCOS": 2458,
+                    "PANTHERS": 1882
+               },
+               "2016-1": {
+                    "BRONCOS": 1978,
+                    "PANTHERS": 1369
+               },
+               "2015-11": {
+                    "BRONCOS": 159,
+                    "PANTHERS": 188
+               }
+          }
+     },
+     "bySb": {
+          "SB2014": {
+               "BRONCOS": 2049,
+               "SEAHAWKS": 2791
+          },
+          "SB2015": {
+               "PATRIOTS": 2295,
+               "SEAHAWKS": 2461
+          },
+          "SB2016": {
+               "BRONCOS": 4855,
+               "PANTHERS": 3676
+          }
+     }
+}
