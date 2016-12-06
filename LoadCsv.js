@@ -103,6 +103,9 @@ LoadCsv = {
        },
     },
     
+    
+    HASHTAGS_JSON : {},
+    
     DAYS_EXEC : 30, // ennyi nappal tovább is nézzük külön az elemeket
     
     results : {
@@ -162,7 +165,9 @@ LoadCsv = {
                             pWin = false,
                             bWin = false;
                             
-                        for(key in LoadCsv.HASHTAGS){
+                        for(var year in LoadCsv.HASHTAGS_JSON.TEAMS){
+                            var key = "SB"+year;  // key = SB2014... stb
+                          
                             var toOther = false; // nem intervallumba eső dátum-e
                             if(
                                 !(
@@ -312,6 +317,8 @@ LoadCsv = {
                 .replace(/"/g, "\\\"");
     },
     csvRead: function (d) {
+        this.HASHTAGS_JSON = JSON.parse(fs.readFileSync('hashtags.json', 'utf8'));
+        
         fs.readdir(LoadCsv.tempFolder, function (err, files) {
             if (err) {
                 throw err;
