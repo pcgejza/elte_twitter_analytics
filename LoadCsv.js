@@ -9,7 +9,7 @@ var mkdirp = require('mkdirp');
 var CONSOLE_LOG = true;
 var db = require('./Database.js');
 
-LoadCsv = {
+LoadCsv = { // TODO: Át kell nevezni!
     
     
     REQ_DATAS : [],
@@ -19,6 +19,7 @@ LoadCsv = {
     counter : 0,
     
     
+    // TODO: itt majd meg kell adni a super bowl adathalmazt a daraboláshoz
     filepath : './music.tsv',
     tempFolder : './csv/',
     csvDelimiter : '|',
@@ -38,7 +39,8 @@ LoadCsv = {
             'end' : new Date('2016-02-06'), 
         }
     },
-    
+   
+    // TODO: ezt az objektumot el kell törölni, jsonből jön majd
     HASHTAGS : {
        'SB2014' : { // Győztes : SEAHAWKS
             BRONCOS :  [
@@ -104,7 +106,7 @@ LoadCsv = {
     },
     
     
-    HASHTAGS_JSON : {},
+    HASHTAGS_JSON : {}, // ebbe az objektumba kerül bele a kereséshez szükséges adat, pl a hashtegek
     
     DAYS_EXEC : 30, // ennyi nappal tovább is nézzük külön az elemeket
     
@@ -186,6 +188,7 @@ LoadCsv = {
                                 }
                             }
                             var isWinS = [];
+                            // TODO: itt már a json-ban lévő hashtag halmazt kellene használni
                             for(kh in LoadCsv.HASHTAGS[key]){
                                 for(hashtagKey in LoadCsv.HASHTAGS[key][kh]){
                                     if(tweetText.indexOf(LoadCsv.HASHTAGS[key][kh][hashtagKey]) !== -1){
