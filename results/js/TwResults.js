@@ -50,7 +50,6 @@ var TwResults = {
      * @returns {undefined}
      */
     createGraphs : function(){
-        
         google.charts.load('current', {'packages':['corechart', 'bar']});
         
         this.createSbGraphs();
@@ -65,7 +64,6 @@ var TwResults = {
         var d1 = $('#graph_by_sb_2014');
         var d2 = $('#graph_by_sb_2015');
         var d3 = $('#graph_by_sb_2016');
-        
         var index = 0;
         // Load the Visualization API and the corechart package.
 
@@ -96,7 +94,7 @@ var TwResults = {
                     }else if(index == 2){
                         e = d3.find('div')[0];
                     }
-
+                    
                     // Instantiate and draw our chart, passing in some options.
                     var chart = new google.visualization.PieChart(e);
                     chart.draw(data, options);
@@ -119,7 +117,7 @@ var TwResults = {
         google.charts.setOnLoadCallback(function(){
             for(key in TwResults.datas.byHashtag){
                 var d = [
-                    ['Hashtag', 'Use'],
+                    ['Hashtag', 'Használat'],
                 ];
                 
                 for(key2 in TwResults.datas.byHashtag[key]){
@@ -141,7 +139,7 @@ var TwResults = {
                 var options = {
                   chart: {
                     title: key,
-                    width : 800,
+                    width : '500px',
                   },
                   bars: 'horizontal' // Required for Material Bar Charts.
                 };
