@@ -7,7 +7,6 @@ var child;
 var path = require("path");
 var mkdirp = require('mkdirp');
 var CONSOLE_LOG = true;
-var db = require('./Database.js');
 
 TwitterSBanalitycs = {
 
@@ -44,8 +43,6 @@ TwitterSBanalitycs = {
      * @returns {undefined}
      */
     csvSplitter: function () {
-        DB.createTableIfNotExists(DB.emptyTable);
-
         // fájl feldarabolása
         // 1.lépés : temp könyvtár létrehozása
         mkdirp(TwitterSBanalitycs.tempFolder, function (err) {
