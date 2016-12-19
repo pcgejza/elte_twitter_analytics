@@ -37,11 +37,12 @@ TwitterSBanalitycs = {
         bySb: {},
     },
 
-    broncosWin: 0,
-    panthersWin: 0,
-
     errorsOnFile: {},
 
+    /*
+     * A függvény segítségévél feldaraboljuk a csv fájlt több különböző darabra
+     * @returns {undefined}
+     */
     csvSplitter: function () {
         DB.createTableIfNotExists(DB.emptyTable);
 
@@ -60,12 +61,6 @@ TwitterSBanalitycs = {
                 TwitterSBanalitycs.csvRead();
             });
         });
-    },
-    createQuery: function (row) {
-        var q = "INSERT INTO music_ (music_artist, music_name ) VALUES (";
-        q += "E\'" + TwitterSBanalitycs.escapeStr(row[3]) + "\', E\'" + TwitterSBanalitycs.escapeStr(row[5]) + "\'";
-        q += ")";
-        return q;
     },
     parseCsvFile: function (file) {
         var stream = fs.createReadStream(file);
@@ -90,22 +85,7 @@ TwitterSBanalitycs = {
                     }
                 })
                 .on("end", function () {
-                    TwitterSBanalitycs.allFilesIt++;
-                    var currentPercentage = TwitterSBanalitycs.allFilesIt == 0 ? 0 : Math.round(TwitterSBanalitycs.allFilesIt / TwitterSBanalitycs.allFiles * 100);
 
-                    //console.log(currentPercentage+"%");
-
-                    if (currentPercentage === 100) {
-                        //TwitterSBanalitycs.deleteTempDirectory();
-                        //console.log('Az adatok betöltése elkészült!');
-                        console.log("-------- EREDMÉNY ---------- ");
-
-                        console.log(TwitterSBanalitycs.results);
-
-                        var t = new Date().getTime();
-
-                        fs.writeFile("./csv/results_" + t + ".json", JSON.stringify(TwitterSBanalitycs.results, null, 5));
-                    }
                 });
         stream.pipe(csvStream);
 
@@ -223,7 +203,7 @@ TwitterSBanalitycs = {
                 noContinue = true;
             }
         }
-        if(!noContinue){
+        if (!noContinue) {
             var tweetDateYMD = tweetDate.yyyy_mm_dd();
             var tweetDateY = tweetDate.getFullYear();
             var tweetDateYm = tweetDate.yyyy_mm();
@@ -231,7 +211,7 @@ TwitterSBanalitycs = {
             var hashtagData = {};
             hashtagData[TwitterSBanalitycs.HASHTAGS_JSON.TEAMS[year0].W] = TwitterSBanalitycs.HASHTAGS_JSON.HASHTAGS[TwitterSBanalitycs.HASHTAGS_JSON.TEAMS[year0].W];
             hashtagData[TwitterSBanalitycs.HASHTAGS_JSON.TEAMS[year0].L] = TwitterSBanalitycs.HASHTAGS_JSON.HASHTAGS[TwitterSBanalitycs.HASHTAGS_JSON.TEAMS[year0].L];
-            
+
             for (kh in hashtagData) {
                 for (hashtagKey in hashtagData[kh]) {
                     if (tweetText.indexOf(hashtagData[kh][hashtagKey]) !== -1) {
