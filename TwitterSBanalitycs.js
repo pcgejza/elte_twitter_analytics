@@ -9,7 +9,7 @@ var mkdirp = require('mkdirp');
 var CONSOLE_LOG = true;
 var db = require('./Database.js');
 
-LoadCsv = { // TODO: Át kell nevezni!
+TwitterSBanalitycs = {
     
     
     REQ_DATAS : [],
@@ -64,23 +64,23 @@ LoadCsv = { // TODO: Át kell nevezni!
         
         // fájl feldarabolása
         // 1.lépés : temp könyvtár létrehozása
-        mkdirp(LoadCsv.tempFolder, function (err) {
+        mkdirp(TwitterSBanalitycs.tempFolder, function (err) {
             // 2. lépés : csv darabolása
 
-            child = exec("split -l "+LoadCsv.rowsPerFile+" "+LoadCsv.filepath+" "+LoadCsv.tempFolder+"tmp", function (error, stdout, stderr) {
+            child = exec("split -l "+TwitterSBanalitycs.rowsPerFile+" "+TwitterSBanalitycs.filepath+" "+TwitterSBanalitycs.tempFolder+"tmp", function (error, stdout, stderr) {
                 if (error !== null) {
                     console.log('split exec error: ' + error);
                     return -1;
                 }
                 
                 // 3. lépés : végigiterálás a csv fájlokon
-                LoadCsv.csvRead();
+                TwitterSBanalitycs.csvRead();
             });
         });
     },
     createQuery: function (row) {
         var q = "INSERT INTO music_ (music_artist, music_name ) VALUES (";
-        q += "E\'" + LoadCsv.escapeStr(row[3]) + "\', E\'" + LoadCsv.escapeStr(row[5]) + "\'";
+        q += "E\'" + TwitterSBanalitycs.escapeStr(row[3]) + "\', E\'" + TwitterSBanalitycs.escapeStr(row[5]) + "\'";
         q += ")";
         return q;
     },
@@ -88,7 +88,7 @@ LoadCsv = { // TODO: Át kell nevezni!
         var stream = fs.createReadStream(file);
         var $this = this;
         
-        var csvStream = csv.parse({delimiter: LoadCsv.csvDelimiter, quote: null, escape: null})
+        var csvStream = csv.parse({delimiter: TwitterSBanalitycs.csvDelimiter, quote: null, escape: null})
                 .on("data", function (data) {
                     try{
                         var tweetText = data[23]; // a tweet szövege
@@ -103,17 +103,17 @@ LoadCsv = { // TODO: Át kell nevezni!
                             bWin = false;
                             
                             
-                        for(var year0 in LoadCsv.HASHTAGS_JSON.TEAMS){
+                        for(var year0 in TwitterSBanalitycs.HASHTAGS_JSON.TEAMS){
                             var key = "SB"+year0;  // key = SB2014... stb
                             var toOther = false; // nem intervallumba eső dátum-e
                             if(
                                 !(
-                                    LoadCsv.SB_TIMES[key]['start'] < tweetDate &&
-                                    LoadCsv.SB_TIMES[key]['end'] > tweetDate
+                                    TwitterSBanalitycs.SB_TIMES[key]['start'] < tweetDate &&
+                                    TwitterSBanalitycs.SB_TIMES[key]['end'] > tweetDate
                                 )
                             ){
-                                if(LoadCsv.SB_TIMES[key]['end'] <= tweetDate){
-                                    var dL = LoadCsv.SB_TIMES[key]['end'].addDays(LoadCsv.DAYS_EXEC);
+                                if(TwitterSBanalitycs.SB_TIMES[key]['end'] <= tweetDate){
+                                    var dL = TwitterSBanalitycs.SB_TIMES[key]['end'].addDays(TwitterSBanalitycs.DAYS_EXEC);
                                     if(tweetDate >= dL){
                                         toOther = true;
                                     }
@@ -125,21 +125,21 @@ LoadCsv = { // TODO: Át kell nevezni!
                             var isWinS = [];
                             
                             var hashtagData = { };
-                            hashtagData[LoadCsv.HASHTAGS_JSON.TEAMS[year0].W] = LoadCsv.HASHTAGS_JSON.HASHTAGS[LoadCsv.HASHTAGS_JSON.TEAMS[year0].W];
-                            hashtagData[LoadCsv.HASHTAGS_JSON.TEAMS[year0].L] = LoadCsv.HASHTAGS_JSON.HASHTAGS[LoadCsv.HASHTAGS_JSON.TEAMS[year0].L];
+                            hashtagData[TwitterSBanalitycs.HASHTAGS_JSON.TEAMS[year0].W] = TwitterSBanalitycs.HASHTAGS_JSON.HASHTAGS[TwitterSBanalitycs.HASHTAGS_JSON.TEAMS[year0].W];
+                            hashtagData[TwitterSBanalitycs.HASHTAGS_JSON.TEAMS[year0].L] = TwitterSBanalitycs.HASHTAGS_JSON.HASHTAGS[TwitterSBanalitycs.HASHTAGS_JSON.TEAMS[year0].L];
                             
                             for(kh in hashtagData){
                                 for(hashtagKey in hashtagData[kh]){
                                     if(tweetText.indexOf(hashtagData[kh][hashtagKey]) !== -1){ 
                                         isWinS[key] = kh;
                                         
-                                        if(typeof undefined === typeof LoadCsv.results.byHashtag[key]){
-                                            LoadCsv.results.byHashtag[key] = {};
+                                        if(typeof undefined === typeof TwitterSBanalitycs.results.byHashtag[key]){
+                                            TwitterSBanalitycs.results.byHashtag[key] = {};
                                         }
-                                        if(typeof undefined === typeof LoadCsv.results.byHashtag[key][hashtagData[kh][hashtagKey]]){
-                                            LoadCsv.results.byHashtag[key][hashtagData[kh][hashtagKey]] = 0;
+                                        if(typeof undefined === typeof TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]]){
+                                            TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]] = 0;
                                         }
-                                        LoadCsv.results.byHashtag[key][hashtagData[kh][hashtagKey]]++;
+                                        TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]]++;
                                     }
                                 }
                             }
@@ -147,105 +147,86 @@ LoadCsv = { // TODO: Át kell nevezni!
                             if(Object.keys(isWinS).length > 0){
                                 for(winHk in isWinS){
                                     //naponta
-                                    if(typeof undefined === typeof LoadCsv.results.byDate[winHk]){
-                                        LoadCsv.results.byDate[winHk] = {};
+                                    if(typeof undefined === typeof TwitterSBanalitycs.results.byDate[winHk]){
+                                        TwitterSBanalitycs.results.byDate[winHk] = {};
                                     }
-                                    if(typeof undefined === typeof LoadCsv.results.byDate[winHk][tweetDateYMD]){
-                                        LoadCsv.results.byDate[winHk][tweetDateYMD] = {};
+                                    if(typeof undefined === typeof TwitterSBanalitycs.results.byDate[winHk][tweetDateYMD]){
+                                        TwitterSBanalitycs.results.byDate[winHk][tweetDateYMD] = {};
                                         for(kh1 in hashtagData){
-                                            if(typeof undefined === typeof LoadCsv.results.byDate[winHk][tweetDateYMD][kh1]){
-                                                LoadCsv.results.byDate[winHk][tweetDateYMD][kh1] = 0;
+                                            if(typeof undefined === typeof TwitterSBanalitycs.results.byDate[winHk][tweetDateYMD][kh1]){
+                                                TwitterSBanalitycs.results.byDate[winHk][tweetDateYMD][kh1] = 0;
                                             }
                                         }
                                     };
                                     
                                     // évente
-                                    if(typeof undefined === typeof LoadCsv.results.byYear[winHk]){
-                                        LoadCsv.results.byYear[winHk] = {};
+                                    if(typeof undefined === typeof TwitterSBanalitycs.results.byYear[winHk]){
+                                        TwitterSBanalitycs.results.byYear[winHk] = {};
                                     }
-                                    if(typeof undefined === typeof LoadCsv.results.byYear[winHk][tweetDateY]){
-                                        LoadCsv.results.byYear[winHk][tweetDateY] = {};
+                                    if(typeof undefined === typeof TwitterSBanalitycs.results.byYear[winHk][tweetDateY]){
+                                        TwitterSBanalitycs.results.byYear[winHk][tweetDateY] = {};
                                         for(kh1 in hashtagData){
-                                            if(typeof undefined === typeof LoadCsv.results.byYear[winHk][tweetDateY][kh1]){
-                                                LoadCsv.results.byYear[winHk][tweetDateY][kh1] = 0;
+                                            if(typeof undefined === typeof TwitterSBanalitycs.results.byYear[winHk][tweetDateY][kh1]){
+                                                TwitterSBanalitycs.results.byYear[winHk][tweetDateY][kh1] = 0;
                                             }
                                         }
                                     };
                                     
                                     // havonta
-                                    if(typeof undefined === typeof LoadCsv.results.byYearMonth[winHk]){
-                                        LoadCsv.results.byYearMonth[winHk] = {};
+                                    if(typeof undefined === typeof TwitterSBanalitycs.results.byYearMonth[winHk]){
+                                        TwitterSBanalitycs.results.byYearMonth[winHk] = {};
                                     }
-                                    if(typeof undefined === typeof LoadCsv.results.byYearMonth[winHk][tweetDateYm]){
-                                        LoadCsv.results.byYearMonth[winHk][tweetDateYm] = {};
+                                    if(typeof undefined === typeof TwitterSBanalitycs.results.byYearMonth[winHk][tweetDateYm]){
+                                        TwitterSBanalitycs.results.byYearMonth[winHk][tweetDateYm] = {};
                                         for(kh1 in hashtagData){
-                                            if(typeof undefined === typeof LoadCsv.results.byYearMonth[winHk][tweetDateYm][kh1]){
-                                                LoadCsv.results.byYearMonth[winHk][tweetDateYm][kh1] = 0;
+                                            if(typeof undefined === typeof TwitterSBanalitycs.results.byYearMonth[winHk][tweetDateYm][kh1]){
+                                                TwitterSBanalitycs.results.byYearMonth[winHk][tweetDateYm][kh1] = 0;
                                             }
                                         }
                                     };
                                     
                                     // tweetenként
-                                    if(typeof undefined === typeof LoadCsv.results.bySb[winHk]){
-                                        LoadCsv.results.bySb[winHk] = {};
+                                    if(typeof undefined === typeof TwitterSBanalitycs.results.bySb[winHk]){
+                                        TwitterSBanalitycs.results.bySb[winHk] = {};
                                         for(kh1 in hashtagData){
-                                            if(typeof undefined === typeof LoadCsv.results.bySb[winHk][kh1]){
-                                                LoadCsv.results.bySb[winHk][kh1] = 0;
+                                            if(typeof undefined === typeof TwitterSBanalitycs.results.bySb[winHk][kh1]){
+                                                TwitterSBanalitycs.results.bySb[winHk][kh1] = 0;
                                             }
                                         }
                                     }
                                     
                                     if(!toOther){
-                                        LoadCsv.results.byYear[winHk][tweetDateY][isWinS[winHk]]++;
-                                        LoadCsv.results.bySb[winHk][isWinS[winHk]]++;
+                                        TwitterSBanalitycs.results.byYear[winHk][tweetDateY][isWinS[winHk]]++;
+                                        TwitterSBanalitycs.results.bySb[winHk][isWinS[winHk]]++;
                                     }
-                                    LoadCsv.results.byYearMonth[winHk][tweetDateYm][isWinS[winHk]]++;
-                                    LoadCsv.results.byDate[winHk][tweetDateYMD][isWinS[winHk]]++;
+                                    TwitterSBanalitycs.results.byYearMonth[winHk][tweetDateYm][isWinS[winHk]]++;
+                                    TwitterSBanalitycs.results.byDate[winHk][tweetDateYMD][isWinS[winHk]]++;
                                 }
                             }
                         }    
                     }catch(e){
-                        if(typeof LoadCsv.errorsOnFile[file] === typeof unedfined){
-                            LoadCsv.errorsOnFile[file] = [];
+                        if(typeof TwitterSBanalitycs.errorsOnFile[file] === typeof unedfined){
+                            TwitterSBanalitycs.errorsOnFile[file] = [];
                         }
-                        LoadCsv.errorsOnFile[file].push(data);
+                        TwitterSBanalitycs.errorsOnFile[file].push(data);
                     }
-                    
-                    
-                    return;
-                    /*
-                    data[3] = LoadCsv.escapeStr(data[3]);
-                    data[5] = LoadCsv.escapeStr(data[5]);
-                    var key = data[3] + "_" + data[5];
-                    LoadCsv.counter++;
-                    if (!(key in LoadCsv.REQ_DATAS)) {
-                        var q = LoadCsv.createQuery(data);
-                        LoadCsv.REQ_DATAS[key] = key;
-                        DB.insert(q);
-                        if (CONSOLE_LOG) {
-                            if (LoadCsv.counter % LoadCsv.rowsPerFile === 0) {
-                                console.log(LoadCsv.counter + "(" + Object.keys(LoadCsv.REQ_DATAS).length + ")");
-                            }
-                        }
-                    }
-                    */
                 })
                 .on("end", function(){ 
-                    LoadCsv.allFilesIt++;
-                    var currentPercentage = LoadCsv.allFilesIt == 0 ? 0 : Math.round(LoadCsv.allFilesIt / LoadCsv.allFiles * 100);
+                    TwitterSBanalitycs.allFilesIt++;
+                    var currentPercentage = TwitterSBanalitycs.allFilesIt == 0 ? 0 : Math.round(TwitterSBanalitycs.allFilesIt / TwitterSBanalitycs.allFiles * 100);
         
                     //console.log(currentPercentage+"%");
         
                     if(currentPercentage === 100){
-                        //LoadCsv.deleteTempDirectory();
+                        //TwitterSBanalitycs.deleteTempDirectory();
                         //console.log('Az adatok betöltése elkészült!');
                         console.log("-------- EREDMÉNY ---------- ");
                        
-                        console.log(LoadCsv.results);
+                        console.log(TwitterSBanalitycs.results);
                         
                         var t = new Date().getTime();
                         
-                        fs.writeFile("./csv/results_"+t+".json", JSON.stringify(LoadCsv.results, null, 5));
+                        fs.writeFile("./csv/results_"+t+".json", JSON.stringify(TwitterSBanalitycs.results, null, 5));
                     }
                 });
         stream.pipe(csvStream);
@@ -260,20 +241,20 @@ LoadCsv = { // TODO: Át kell nevezni!
     csvRead: function (d) {
         this.HASHTAGS_JSON = JSON.parse(fs.readFileSync('hashtags.json', 'utf8'));
         
-        fs.readdir(LoadCsv.tempFolder, function (err, files) {
+        fs.readdir(TwitterSBanalitycs.tempFolder, function (err, files) {
             if (err) {
                 throw err;
             }
             var fl = Object.keys(files).length;
-            LoadCsv.allFiles = fl;
+            TwitterSBanalitycs.allFiles = fl;
             files.forEach(function (file) {
-                LoadCsv.parseCsvFile(LoadCsv.tempFolder + file);
+                TwitterSBanalitycs.parseCsvFile(TwitterSBanalitycs.tempFolder + file);
             });
         });
     },
     
     deleteTempDirectory : function(){
-        child = exec("rm -rf "+LoadCsv.tempFolder, function (error, stdout, stderr) {
+        child = exec("rm -rf "+TwitterSBanalitycs.tempFolder, function (error, stdout, stderr) {
             if (error !== null) {
                 console.log('Error delete temp directory: ' + error);
                 return -1;

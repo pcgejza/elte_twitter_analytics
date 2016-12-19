@@ -1,5 +1,4 @@
-require('./LoadCsv.js');
+require('./TwitterSBanalitycs.js');
 require('./Database.js');
 
-//LoadCsv.deleteTempDirectory();
-LoadCsv.csvRead();
+TwitterSBanalitycs.csvRead();
