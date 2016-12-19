@@ -50,6 +50,7 @@ TwitterSBanalitycs = {
 
     results: {
         byHashtag: {},
+        byHashtagAll: {},
         byDate: {},
         byYear: {},
         byYearMonth: {},
@@ -106,7 +107,18 @@ TwitterSBanalitycs = {
                     }
                 })
                 .on("end", function () {
+                    TwitterSBanalitycs.allFilesIt++;
+                    var currentPercentage = TwitterSBanalitycs.allFilesIt == 0 ? 0 : Math.round(TwitterSBanalitycs.allFilesIt / TwitterSBanalitycs.allFiles * 100);
 
+                    if (currentPercentage === 100) {
+                        console.log("-------- EREDMÉNY ---------- ");
+
+                        console.log(TwitterSBanalitycs.results);
+
+                        var t = new Date().getTime();
+
+                        fs.writeFile("./csv/results_" + t + ".json", JSON.stringify(TwitterSBanalitycs.results, null, 5));
+                    }
                 });
         stream.pipe(csvStream);
 
@@ -117,7 +129,7 @@ TwitterSBanalitycs = {
                 .replace(/'/g, "\\'")
                 .replace(/"/g, "\\\"");
     },
-    csvRead: function (d) {
+    csvRead: function () {
         this.HASHTAGS_JSON = JSON.parse(fs.readFileSync('hashtags.json', 'utf8'));
         this.initSbTimes();
 
@@ -238,13 +250,22 @@ TwitterSBanalitycs = {
                     if (tweetText.indexOf(hashtagData[kh][hashtagKey]) !== -1) {
                         isWinS[key] = kh;
 
-                        if (typeof undefined === typeof TwitterSBanalitycs.results.byHashtag[key]) {
-                            TwitterSBanalitycs.results.byHashtag[key] = {};
+                        if(!toOther){
+                            if (typeof undefined === typeof TwitterSBanalitycs.results.byHashtag[key]) {
+                                TwitterSBanalitycs.results.byHashtag[key] = {};
+                            }
+                            if (typeof undefined === typeof TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]]) {
+                                TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]] = 0;
+                            }
+                            TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]]++;
                         }
-                        if (typeof undefined === typeof TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]]) {
-                            TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]] = 0;
+                        if (typeof undefined === typeof TwitterSBanalitycs.results.byHashtagOther[key]) {
+                            TwitterSBanalitycs.results.byHashtagAll[key] = {};
                         }
-                        TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]]++;
+                        if (typeof undefined === typeof TwitterSBanalitycs.results.byHashtagAll[key][hashtagData[kh][hashtagKey]]) {
+                            TwitterSBanalitycs.results.byHashtagAll[key][hashtagData[kh][hashtagKey]] = 0;
+                        }
+                        TwitterSBanalitycs.results.byHashtagAll[key][hashtagData[kh][hashtagKey]]++;
                     }
                 }
             }

@@ -4,7 +4,7 @@ var TwResults = {
     hashtags : null,
   
     init : function(){
-        $.getJSON("results.json", function(json) {
+        $.getJSON("results2.json", function(json) {
             TwResults.datas = json;
             TwResults.createGraphs();
         });
