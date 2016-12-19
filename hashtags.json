@@ -13,6 +13,12 @@
             "L": "PANTHERS"
         }
     },
+    "SB_TIMES": {
+        "_comment" : "Ebben tároljuk azt, hogy melyik nap volt a super bowl az adott évben",
+        "2014" : "2014-02-02",
+        "2015" : "2015-02-01",
+        "2016" : "2015-02-07"
+    },
     "HASHTAGS": {
         "BRONCOS": [
             "#BroncosWin",
