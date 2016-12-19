@@ -1,3 +1,3 @@
 require('./TwitterSBanalitycs.js');
 
-TwitterSBanalitycs.csvRead();
+TwitterSBanalitycs.csvSplitter();

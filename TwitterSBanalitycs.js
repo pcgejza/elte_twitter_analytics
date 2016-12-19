@@ -8,6 +8,26 @@ var path = require("path");
 var mkdirp = require('mkdirp');
 var CONSOLE_LOG = true;
 
+
+var rmdir = function(dir) {
+    var list = fs.readdirSync(dir);
+    for(var i = 0; i < list.length; i++) {
+        var filename = path.join(dir, list[i]);
+        var stat = fs.statSync(filename);
+
+        if(filename == "." || filename == "..") {
+            // pass these files
+        } else if(stat.isDirectory()) {
+            // rmdir recursively
+            rmdir(filename);
+        } else {
+            // rm fiilename
+            fs.unlinkSync(filename);
+        }
+    }
+    fs.rmdirSync(dir);
+};
+
 TwitterSBanalitycs = {
 
     REQ_DATAS: [],
@@ -17,8 +37,8 @@ TwitterSBanalitycs = {
     counter: 0,
 
     // TODO: itt majd meg kell adni a super bowl adathalmazt a daraboláshoz
-    filepath: './music.tsv',
-    tempFolder: './csv/',
+    filepath: './csv/superbowl_all.csv',
+    tempFolder: './csv/temp/',
     csvDelimiter: '|',
     rowsPerFile: 10000, // milyen sorközönként vágja szét a nagyobb fájlt
 
@@ -44,6 +64,10 @@ TwitterSBanalitycs = {
      */
     csvSplitter: function () {
         // fájl feldarabolása
+
+        // 0.lépés : temp könyvtár törlése
+        rmdir(TwitterSBanalitycs.tempFolder);
+
         // 1.lépés : temp könyvtár létrehozása
         mkdirp(TwitterSBanalitycs.tempFolder, function (err) {
             // 2. lépés : csv darabolása
