@@ -66,7 +66,7 @@ TwitterSBanalitycs = {
         // fájl feldarabolása
 
         // 0.lépés : temp könyvtár törlése
-        rmdir(TwitterSBanalitycs.tempFolder);
+        //rmdir(TwitterSBanalitycs.tempFolder);
 
         // 1.lépés : temp könyvtár létrehozása
         mkdirp(TwitterSBanalitycs.tempFolder, function (err) {
