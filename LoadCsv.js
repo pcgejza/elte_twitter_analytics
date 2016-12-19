@@ -40,71 +40,6 @@ LoadCsv = { // TODO: Át kell nevezni!
         }
     },
    
-    // TODO: ezt az objektumot el kell törölni, jsonből jön majd
-    HASHTAGS : {
-       'SB2014' : { // Győztes : SEAHAWKS
-            BRONCOS :  [
-                '#BroncosWin',
-                '#GoBroncos',
-                '#Broncos',
-                '#Denver',
-                '#DENVER',
-            ],
-
-            SEAHAWKS :  [
-                '#SEAHAWKSWin',
-                '#seahawks',
-                '#GoSeahawks',
-                '#Goseahawks',
-                '#goseahawks',
-                '#Seahawks',
-                '#SEAHAWKS',
-                '#Seattle'
-            ], 
-       },
-       'SB2015' : { // Győztes: PATRIOTS
-            PATRIOTS :  [
-                '#Pats',
-                '#PATS',
-                '#PatsWin',
-                '#PatriotsWin',
-                '#GoPatriots',
-                '#Patriots',
-                '#PATRIOTS',
-                '#NewEngland',
-                '#NEP'
-            ],
-
-            SEAHAWKS :  [
-                '#SEAHAWKSWin',
-                '#seahawks',
-                '#GoSeahawks',
-                '#Goseahawks',
-                '#goseahawks',
-                '#Seahawks',
-                '#SEAHAWKS',
-                '#Seattle'
-            ], 
-       },
-       'SB2016' : { // Győztes : BRONCOS
-            BRONCOS :  [
-                '#BroncosWin',
-                '#GoBroncos',
-                '#Broncos',
-                '#Denver',
-                '#DENVER',
-            ],
-
-            PANTHERS :  [
-                '#PanthersWin',
-                '#pantherswin',
-                '#panthers',
-                '#Panthers',
-                '#Carolina'
-            ], 
-       },
-    },
-    
     
     HASHTAGS_JSON : {}, // ebbe az objektumba kerül bele a kereséshez szükséges adat, pl a hashtegek
     
@@ -167,9 +102,9 @@ LoadCsv = { // TODO: Át kell nevezni!
                             pWin = false,
                             bWin = false;
                             
-                        for(var year in LoadCsv.HASHTAGS_JSON.TEAMS){
-                            var key = "SB"+year;  // key = SB2014... stb
-                          
+                            
+                        for(var year0 in LoadCsv.HASHTAGS_JSON.TEAMS){
+                            var key = "SB"+year0;  // key = SB2014... stb
                             var toOther = false; // nem intervallumba eső dátum-e
                             if(
                                 !(
@@ -188,33 +123,36 @@ LoadCsv = { // TODO: Át kell nevezni!
                                 }
                             }
                             var isWinS = [];
-                            // TODO: itt már a json-ban lévő hashtag halmazt kellene használni
-                            for(kh in LoadCsv.HASHTAGS[key]){
-                                for(hashtagKey in LoadCsv.HASHTAGS[key][kh]){
-                                    if(tweetText.indexOf(LoadCsv.HASHTAGS[key][kh][hashtagKey]) !== -1){
+                            
+                            var hashtagData = { };
+                            hashtagData[LoadCsv.HASHTAGS_JSON.TEAMS[year0].W] = LoadCsv.HASHTAGS_JSON.HASHTAGS[LoadCsv.HASHTAGS_JSON.TEAMS[year0].W];
+                            hashtagData[LoadCsv.HASHTAGS_JSON.TEAMS[year0].L] = LoadCsv.HASHTAGS_JSON.HASHTAGS[LoadCsv.HASHTAGS_JSON.TEAMS[year0].L];
+                            
+                            for(kh in hashtagData){
+                                for(hashtagKey in hashtagData[kh]){
+                                    if(tweetText.indexOf(hashtagData[kh][hashtagKey]) !== -1){ 
                                         isWinS[key] = kh;
                                         
                                         if(typeof undefined === typeof LoadCsv.results.byHashtag[key]){
                                             LoadCsv.results.byHashtag[key] = {};
                                         }
-                                        if(typeof undefined === typeof LoadCsv.results.byHashtag[key][LoadCsv.HASHTAGS[key][kh][hashtagKey]]){
-                                            LoadCsv.results.byHashtag[key][LoadCsv.HASHTAGS[key][kh][hashtagKey]] = 0;
+                                        if(typeof undefined === typeof LoadCsv.results.byHashtag[key][hashtagData[kh][hashtagKey]]){
+                                            LoadCsv.results.byHashtag[key][hashtagData[kh][hashtagKey]] = 0;
                                         }
-                                        LoadCsv.results.byHashtag[key][LoadCsv.HASHTAGS[key][kh][hashtagKey]]++;
+                                        LoadCsv.results.byHashtag[key][hashtagData[kh][hashtagKey]]++;
                                     }
                                 }
                             }
 
                             if(Object.keys(isWinS).length > 0){
                                 for(winHk in isWinS){
-                                    
                                     //naponta
                                     if(typeof undefined === typeof LoadCsv.results.byDate[winHk]){
                                         LoadCsv.results.byDate[winHk] = {};
                                     }
                                     if(typeof undefined === typeof LoadCsv.results.byDate[winHk][tweetDateYMD]){
                                         LoadCsv.results.byDate[winHk][tweetDateYMD] = {};
-                                        for(kh1 in LoadCsv.HASHTAGS[winHk]){
+                                        for(kh1 in hashtagData){
                                             if(typeof undefined === typeof LoadCsv.results.byDate[winHk][tweetDateYMD][kh1]){
                                                 LoadCsv.results.byDate[winHk][tweetDateYMD][kh1] = 0;
                                             }
@@ -227,7 +165,7 @@ LoadCsv = { // TODO: Át kell nevezni!
                                     }
                                     if(typeof undefined === typeof LoadCsv.results.byYear[winHk][tweetDateY]){
                                         LoadCsv.results.byYear[winHk][tweetDateY] = {};
-                                        for(kh1 in LoadCsv.HASHTAGS[winHk]){
+                                        for(kh1 in hashtagData){
                                             if(typeof undefined === typeof LoadCsv.results.byYear[winHk][tweetDateY][kh1]){
                                                 LoadCsv.results.byYear[winHk][tweetDateY][kh1] = 0;
                                             }
@@ -240,7 +178,7 @@ LoadCsv = { // TODO: Át kell nevezni!
                                     }
                                     if(typeof undefined === typeof LoadCsv.results.byYearMonth[winHk][tweetDateYm]){
                                         LoadCsv.results.byYearMonth[winHk][tweetDateYm] = {};
-                                        for(kh1 in LoadCsv.HASHTAGS[winHk]){
+                                        for(kh1 in hashtagData){
                                             if(typeof undefined === typeof LoadCsv.results.byYearMonth[winHk][tweetDateYm][kh1]){
                                                 LoadCsv.results.byYearMonth[winHk][tweetDateYm][kh1] = 0;
                                             }
@@ -250,7 +188,7 @@ LoadCsv = { // TODO: Át kell nevezni!
                                     // tweetenként
                                     if(typeof undefined === typeof LoadCsv.results.bySb[winHk]){
                                         LoadCsv.results.bySb[winHk] = {};
-                                        for(kh1 in LoadCsv.HASHTAGS[winHk]){
+                                        for(kh1 in hashtagData){
                                             if(typeof undefined === typeof LoadCsv.results.bySb[winHk][kh1]){
                                                 LoadCsv.results.bySb[winHk][kh1] = 0;
                                             }
