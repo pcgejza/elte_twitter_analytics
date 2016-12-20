@@ -54,6 +54,7 @@ var TwResults = {
         
         this.createSbGraphs();
         this.createHashtagGraphs();
+        this.createDayscGraphs();
     },
     
     
@@ -142,6 +143,60 @@ var TwResults = {
                     width : '500px',
                   },
                   bars: 'horizontal' // Required for Material Bar Charts.
+                };
+
+                var chart = new google.charts.Bar(e);
+                chart.draw(data, options);
+                
+                index++;
+            }
+        });
+    },
+    
+    /**
+     * Három grafikon létrehozása, a super bowlok alapján napokra bontva
+     */
+    createDayscGraphs : function(){
+        var d1 = $('#graph_by_year_2014');
+        var d2 = $('#graph_by_year_2015');
+        var d3 = $('#graph_by_year_2016');
+        var index = 0;
+        // Load the Visualization API and the corechart package.
+        
+        google.charts.setOnLoadCallback(function(){
+            for(key in TwResults.datas.byYear){
+                var d = [];
+                
+                var firstRowadded = false;
+                for(key2 in TwResults.datas.byYear[key]){
+                    if(firstRowadded === false){
+                        var fr = ['Év'];
+                        firstRowadded = Object.keys(TwResults.datas.byYear[key][key2]);
+                        fr = fr.concat(firstRowadded);
+                        d.push(fr);
+                    }
+                    var pus = [
+                       key2, TwResults.datas.byYear[key][key2][firstRowadded[0]], TwResults.datas.byYear[key][key2][firstRowadded[1]],
+                    ];
+                    d.push(pus);
+                }
+
+
+                var data = new google.visualization.arrayToDataTable(d);
+
+                var e = d1[0];
+                if(index == 1){
+                    e = d2[0];
+                }else if(index == 2){
+                    e = d3[0];
+                }
+
+                var options = {
+                  chart: {
+                    title: key,
+                    width : '500px',
+                  },
+                  bars: 'vertical' // Required for Material Bar Charts.
                 };
 
                 var chart = new google.charts.Bar(e);
