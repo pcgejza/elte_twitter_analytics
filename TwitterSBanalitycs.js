@@ -259,13 +259,6 @@ TwitterSBanalitycs = {
                             }
                             TwitterSBanalitycs.results.byHashtag[key][hashtagData[kh][hashtagKey]]++;
                         }
-                        if (typeof undefined === typeof TwitterSBanalitycs.results.byHashtagOther[key]) {
-                            TwitterSBanalitycs.results.byHashtagAll[key] = {};
-                        }
-                        if (typeof undefined === typeof TwitterSBanalitycs.results.byHashtagAll[key][hashtagData[kh][hashtagKey]]) {
-                            TwitterSBanalitycs.results.byHashtagAll[key][hashtagData[kh][hashtagKey]] = 0;
-                        }
-                        TwitterSBanalitycs.results.byHashtagAll[key][hashtagData[kh][hashtagKey]]++;
                     }
                 }
             }
@@ -346,6 +339,10 @@ Date.prototype.yyyy_mm_dd = function () {
 Date.prototype.yyyy_mm = function () {
     var mm = this.getMonth() + 1; // getMonth() is zero-based
     var dd = this.getDate();
+    
+    if(mm < 10){
+        mm = '0' + '' +mm;
+    }
 
     return [this.getFullYear(), mm].join('-'); // padding
 };
