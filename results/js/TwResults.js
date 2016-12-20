@@ -10,7 +10,7 @@ var TwResults = {
     },
   
     init : function(){
-        $.getJSON("results2_1.json", function(json) {
+        $.getJSON("results.json", function(json) {
             TwResults.datas = json;
             TwResults.createGraphs();
         });
