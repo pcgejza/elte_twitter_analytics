@@ -1,89 +1,280 @@
-<html>
-    <head>
+<html lang="hu"><head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="stylesheet" href="css/style.css" />
-        
+        <meta name="description" content="elte,twitter,analytics">
+        <meta name="author" content="Huzinecz Erik">
+
+        <title>Elte twitter analytics</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+        <!-- Custom styles for this template -->
+        <link href="css/custom.css" rel="stylesheet">
+
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="js/jquery-1.11.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/TwResults.js"></script>
         <script type="text/javascript">
-            $(document).ready(function(){
+            $(document).ready(function () {
                 TwResults.init();
             });
         </script>
+
     </head>
-    
+
     <body>
-        <div>
-            <h1>
-                Twitter super bowl elemzések a 2014,2015,2016-os évekből
-            </h1>
-            <small>Készítette: <b>Huzinecz Erik</b></small>
-        </div>
-        
-        <hr>
-        
-        <div>
-            <h2>1. Bevezető</h2>
+
+        <div class="container">
+
+            <div class="blog-header">
+                <h1 class="blog-title">Twitter super bowl elemzések a 2014,2015,2016-os évekből</h1>
+                <p class="lead blog-description">Készítette: <b>Huzinecz Erik</b></p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-8 blog-main">
+
+                    <div class="blog-post" id="p1">
+                        <h2 class="blog-post-title">1. Bevezető</h2>
+                        <p>
+                            A feladat során megvizsgáljuk azt, hogy egy nagy twitter adathalmazból milyen értékes adatokat 
+                            lehet kinyerni egy esemény vagy termékre vonatkozóan. Az alapvető feladat az, hogy a meglévő adatokat feldolgozzuk,
+                            valamint valamilyen algoritmus alapján rendszerezzük az adatokat. 
+                        </p>
+                    </div><!-- /.blog-post -->
+
+
+                    <div class="blog-post" id="p2">
+                        <h2 class="blog-post-title">2. Eszközök és adathalmaz</h2>
+                        <h3 class="blog-post-title">2.1. Eszközök és technológiák</h3>
+                        <p>
+                            Kutatás és fejlesztés során felhasznált eszközök:
+                        </p>
+                        <ul>
+                            <li><a href="https://netbeans.org/">Netbeans IDE</a></li>
+                            <li><a href="https://www.google.com/chrome/">Google Chrome</a></li>
+                            <li><a href="https://nodejs.org/en/">NodeJs</a></li>
+                            <li><a href="http://www.w3schools.com/js/">Javacript</a></li>
+                            <li>Twitter nagy adathalmaz CSV formátumban</li>
+                        </ul>
+                        <h3 class="blog-post-title">2.2. Adathalmaz</h3>
+                        <p>
+                            A feladat során az <a href="https://www.elte.hu/">ELTE</a> <a href="http://www.inf.elte.hu/karunkrol/szervezet/tanszekek/Lapok/Inform%C3%A1ci%C3%B3sRendszerekTansz%C3%A9k.aspx">Információs Rendszerek Tanszék</a>e
+                            által begyűjtött twitter adatokkal dolgoztam, ebből is azokkal a tweetekkel, amelyek 
+                            2013.január és 2016.április közöttiek, valamint szerepel a 
+                            tweet szövegében az <a href="https://twitter.com/search?q=%23SB">#SB</a> <a href="https://en.wikipedia.org/wiki/Hashtag">hashtag</a>.
+                        </p>
+                    </div>
+
+                    <div class="blog-post" id="p3">
+                        <h2 class="blog-post-title">3. Történeti háttér</h2>
+                        <blockquote>
+                            <p>
+                                A Super Bowl a fő amerikaifutball-bajnokság, az NFL döntője. 
+                                Az NFL két konferenciája, az AFC és az NFC győztese játssza egymással. 
+                                Az USA-ban kisebb fajta nemzeti ünnepnek számít az esemény, milliók nézik a televízióban. 
+                                Az amerikai futball egyre nagyobb nemzetközi népszerűsége okán a világ többi táján is egyre több nézője van, 
+                                bár Európában az időeltolódás miatt hajnalra csúszik a mérkőzés közvetítése, mivel 
+                                az Egyesült Államokban a reklámok szempontjából oly fontos vasárnap esti főműsoridőben kezdik a mérkőzést.
+                                Az első Super Bowlt 1967-ben rendezték a két rivális amerikai futball liga (AFL, NFL) győztesei között, ekkor még AFL-NFL World Championship Game néven. Az AFL, és az NFL 1970-es egyesülése óta nevezik a mérkőzést hivatalosan is Super Bowlnak.
+                                <a href="https://hu.wikipedia.org/wiki/Super_Bowl">[1]</a>
+                            </p>
+                        </blockquote>
+                        <p>
+                            Mivel nagyon sokan kedvelik a sportágat, így számomra is megfelelő
+                            feladatnak bizonyult az, hogy kutatást végezzek a twitter adatok segítségével.
+                            Az USA-ban a twitter felhasználók száma nagyon magas, ami még egy fontos szempont. 
+                            Úgy vélem, hogy a magas twitter felhasználás, valamint a sportághoz való ragaszkodás alapján
+                            értékes adatok nyerhetők ki a twitter adathalmazból.
+                        </p>
+                        <p>
+                            Az egyes csapatokra való hivatkozást tweetek alapján fogom elemezni.
+                        </p>
+                    </div>
+
+                    <div class="blog-post" id="p4">
+                        <h2 class="blog-post-title">4. Vizsgálati szempontok</h2>
+                        <p>
+                            Arra a következtetésre jutottam, hogy a tweeteket dátum, valamint tweet szöveg alapján
+                            elemzem. Mivel twitter bejegyzésekről van szó, így feltételezem, hogy a győztes csapatnak 
+                            szurkoló felhasználók tweetjeiben szerepel valamely a csapatra utaló hashtag.
+                        </p>
+                    </div>
+
+                    <div class="blog-post" id="p5">
+                        <h2 class="blog-post-title">5. Kutatás és hashtagek</h2>
+                        <p>
+                            Az előző fejezetben arról beszéltem, hogy valamilyen szabályszerűség alapján szűrjük ki a
+                            tweeteket. Kutatást végeztem a 2014, 2015, 2016-os super bowl kapcsán, a résztvevő 
+                            csapatok kapcsán. A kutatás arra irányult, hogy megtudjam a csapatok beceneveit, 
+                            rövidített neveit, amiből egy hashtag halmazt tudok felállítani az egyes csapatokra vonatkozóan.
+                        </p>
+                        <h3 class="blog-post-title">5.1 Kutatás eredménye</h3>
+
+
+                        <p>
+                            Érintett csapatok és a hozzá tartozó hashtagek, évekre bontva:
+                        </p>
+
+                        <h4 class="blog-post-title">2014</h4>
+                        <ul>
+                            <li>
+                                <a href="https://hu.wikipedia.org/wiki/Seattle_Seahawks">Seattle Seahawks</a> (győztes)
+                                <ul class="hashtag-list" data-key="SEAHAWKS"></ul>
+                            </li>
+                            <li>
+                                <a href="https://hu.wikipedia.org/wiki/Denver_Broncos">Denver Broncos</a>
+                                <ul class="hashtag-list" data-key="BRONCOS"></ul>
+                            </li>
+                        </ul>
+
+                        <h4 class="blog-post-title">2015</h4>
+                        <ul>
+                            <li>
+                                <a href="https://hu.wikipedia.org/wiki/New_England_Patriots">New England Patriots</a> (győztes)
+                                <ul class="hashtag-list" data-key="PATRIOTS"></ul>
+                            </li>
+                            <li>
+                                <a href="https://hu.wikipedia.org/wiki/Seattle_Seahawks">Seattle Seahawks</a>
+                                <ul class="hashtag-list" data-key="SEAHAWKS"></ul>
+                            </li>
+                        </ul>
+
+                        <h4 class="blog-post-title">2016</h4>
+                        <ul>
+                            <li>
+                                <a href="https://hu.wikipedia.org/wiki/Carolina_Panthers">Caroline Panthers</a>
+                                <ul class="hashtag-list" data-key="PANTHERS"></ul>
+                            </li>
+                            <li>
+                                <a href="https://hu.wikipedia.org/wiki/Denver_Broncos">Denver Broncos</a> (győztes)
+                                <ul class="hashtag-list" data-key="BRONCOS"></ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                    
+                     
+                    <div class="blog-post" id="p6">
+                        <h2 class="blog-post-title">6. Eredmények</h2>
+                        
+                        <h3>6.1. Grafikonok super bowlok szerint</h3>
+                        <p>
+                            A következő grafikonokon látható az, hogy az egyes csapatok hashtagjeit hányan használták
+                            az érintett <b>super bowlt megelőző <u>3 hónapban</u></b>
+                        </p>
+                        
+                        <div id="graph_by_sb_2014">
+                            <h4>2014, győztes : SEAHAWKS</h4>
+                            <div></div>
+                        </div>
+                        <div id="graph_by_sb_2015" class="inline-graph">
+                            <h4>2015, győztes : PATRIOTS</h4>
+                            <div></div>
+                        </div>
+                        <div id="graph_by_sb_2016" class="inline-graph">
+                            <h4>2016, győztes : BRONCOS</h4>
+                            <div></div>
+                        </div>
+                        
+                        <h3>6.2. Grafikon hashtag szerint</h3>
+                        <p>
+                            A következő grafikonokon látható az, hogy az hányan használták 
+                            az egyes hashtegeket supwer bowlokra bontva  az érintett <b>super bowlt megelőző <u>3 hónapban</u></b>
+                        </p>
+                        
+                        <div id="graph_by_hash_2014">
+                            <div></div>
+                        </div>
+                        <div id="graph_by_hash_2015">
+                            <div></div>
+                        </div>
+                        <div id="graph_by_hash_2016">
+                            <div></div>
+                        </div>
+                        
+                        <h3>6.3. Grafikonok évekre bontva</h2>
+                        <p>
+                            A következő grafikonokon látható az, hogy az hányan használták 
+                            hány twitter üzenet irányult supwer bowlokra és évekre bontva
+                        </p>
+                        
+                        
+                        <div id="graph_by_year_2014">
+                            <div></div>
+                        </div>
+                        <div id="graph_by_year_2015">
+                            <div></div>
+                        </div>
+                        <div id="graph_by_year_2016">
+                            <div></div>
+                        </div>
+                      
+                        
+                        <h3>6.4. Grafikonok hónapokra bontva</h2>
+                        <p>
+                            A következő grafikonokon látható az, hogy az hányan használták 
+                            hány twitter üzenet irányult supwer bowlokra és hónapokra bontva
+                        </p>
+                        
+                        
+                        <div id="graph_by_month_2014">
+                            <div></div>
+                        </div>
+                        <div id="graph_by_month_2015">
+                            <div></div>
+                        </div>
+                        <div id="graph_by_month_2016">
+                            <div></div>
+                        </div>
+                    </div>
+                     
+                    <div class="blog-post" id="p7">   
+                        <h1>7. Összefoglaló</h1>
+                        <p>
+                            A kutatás során bepillantást nyerhettem a twitter, valamint konkrétan a super bowl 
+                            esemény rejtelmeibe. Az eredménytermék, amit készítetettem könnyen átalakítható más,
+                            egyéb témáju twitter adathalmazt vizsgáló programmá. Az eredmény, amit a program készít
+                            egy json fájl, amit bármely programnyelven könnyen fel lehet dolgozni.
+                        </p>
+                    </div>
+
+                </div><!-- /.blog-main -->
+
+                <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                    <div class="sidebar-module">
+                        <h4>Tartalomjegyzék</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#p1">1. Bevezető</a></li>
+                            <li><a href="#p2">2. Eszközök és adathalmaz</a></li>
+                            <li><a href="#p3">3. Történeti háttér</a></li>
+                            <li><a href="#p4">4. Vizsgálati szempontok</a></li>
+                            <li><a href="#p5">5. Kutatás és hashtagek</a></li>
+                            <li><a href="#p6">6. Eredmények</a></li>
+                            <li><a href="#p7">7. Összefoglaló</a></li>
+                        </ol>
+                    </div>
+                </div><!-- /.blog-sidebar -->
+
+            </div><!-- /.row -->
+
+        </div><!-- /.container -->
+
+        <footer class="blog-footer">
             <p>
-                Az alábbiakban megvizsgáljuk azt, hogy egy nagy twitter adathalmazból milyen értékes adatokat 
-                tudunk kinyerni a super bowlokra vonatkozóan. Az alapvető feladatunk az, hogy a meglévő adatokat feldolgozzuk,
-                valamint valamilyen algoritmus alapján rendszerezzük az adatokat. 
+                Készítette: Huzinecz Erik<br>
+                Budapest, 2016.12.01
             </p>
-        </div>
-        <div>
-            <h2>2. Eszközök és adathalmaz</h2>
-            <h3>2.1. Eszközök és technológiák</h3>
             <p>
-                Kutatás és fejlesztés során felhasznált eszközök:
+                <a href="#">Ugrás a tetejére</a>
             </p>
-            <ul>
-                <li><a href="https://netbeans.org/">Netbeans IDE</a></li>
-                <li><a href="https://www.google.com/chrome/">Google Chrome</a></li>
-                <li><a href="https://nodejs.org/en/">NodeJs</a></li>
-                <li><a href="http://www.w3schools.com/js/">Javacript</a></li>
-            </ul>
-            <h3>2.2. Adathalmaz</h3>
-            <p>
-                A feladat során az <a href="https://www.elte.hu/">ELTE</a> <a href="http://www.inf.elte.hu/karunkrol/szervezet/tanszekek/Lapok/Inform%C3%A1ci%C3%B3sRendszerekTansz%C3%A9k.aspx">Információs Rendszerek Tanszék</a>e
-                által begyűjtött twitter adatokkal dolgoztam, ebből is azokkal a tweetekkel, amelyek 
-                <span class="kiemelt">2013.január és 2016.április közöttiek</span>, valamint szerepel a 
-                tweet szövegében az <a href="https://twitter.com/search?q=%23SB">#SB</a> <a href="https://en.wikipedia.org/wiki/Hashtag">hashtag</a>.
-            </p>
-        </div>
-        
-        <div>
-            <h2>Grafikon super bowlok szerint</h2>
-        
-            <div id="graph_by_sb_2014">
-                <h3>2014, győztes : SEAHAWKS</h3>
-                <div></div>
-            </div>
-            <div id="graph_by_sb_2015" class="inline-graph">
-                <h3>2015, győztes : PATRIOTS</h3>
-                <div></div>
-            </div>
-            <div id="graph_by_sb_2016" class="inline-graph">
-                <h3>2016, győztes : BRONCOS</h3>
-                <div></div>
-            </div>
-        </div>
-        
-        <hr>
-        
-        <div>
-            <h2>Grafikon hashtag szerint</h2>
-        
-            <div id="graph_by_hash_2014">
-                <div></div>
-            </div>
-            <div id="graph_by_hash_2015">
-                <div></div>
-            </div>
-            <div id="graph_by_hash_2016">
-                <div></div>
-            </div>
-        </div>
-    </body>
-</html>
+        </footer>
+
+
+    </body></html>

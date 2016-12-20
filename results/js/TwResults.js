@@ -257,9 +257,6 @@ var TwResults = {
                         d.push(pus);
                     }
                 });
-                
-                console.log(d);
-
 
                 var data = new google.visualization.arrayToDataTable(d);
 
